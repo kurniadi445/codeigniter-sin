@@ -10,3 +10,4 @@ $routes->get('/siswa/tambah', 'Siswa::tambah');
 $routes->post('/siswa/tambah', 'Siswa::prosesTambah');
 
 $routes->get('/kelas', 'Kelas::indeks');
+$routes->get('/kelas/tambah', 'Kelas::tambah');
