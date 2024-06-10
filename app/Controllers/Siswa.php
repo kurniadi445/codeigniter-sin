@@ -8,4 +8,9 @@ class Siswa extends BaseController
     {
         return view('tampilan/siswa/indeks');
     }
+
+    public function tambah(): string
+    {
+        return view('tampilan/siswa/tambah');
+    }
 }
