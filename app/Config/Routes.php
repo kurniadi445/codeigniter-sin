@@ -12,4 +12,5 @@ $routes->post('/siswa/tambah', 'Siswa::prosesTambah');
 $routes->get('/kelas', 'Kelas::indeks');
 $routes->get('/kelas/tambah', 'Kelas::tambah');
 $routes->post('/kelas/tambah', 'Kelas::prosesTambah');
+$routes->get('/kelas/edit/(:num)', 'Kelas::edit/$1');
 $routes->get('/kelas/hapus/(:num)', 'Kelas::hapus/$1');
