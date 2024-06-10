@@ -10,6 +10,7 @@ $routes->get('/siswa/tambah', 'Siswa::tambah');
 $routes->post('/siswa/tambah', 'Siswa::prosesTambah');
 
 $routes->get('/guru', 'Guru::indeks');
+$routes->get('/guru/tambah', 'Guru::tambah');
 
 $routes->get('/kelas', 'Kelas::indeks');
 $routes->get('/kelas/tambah', 'Kelas::tambah');
