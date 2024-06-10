@@ -35,7 +35,10 @@
                             <td><?= $k->nama_kelas; ?></td>
                             <td></td>
                             <td>
-                                <a class="btn btn-warning" href="#"><i class="fa fa-pencil"></i></a>
+                                <a
+                                    class="btn btn-warning"
+                                    href="<?= site_url(['kelas', 'edit', $k->id_kelas]); ?>"
+                                ><i class="fa fa-pencil"></i></a>
                                 <a
                                     class="btn btn-danger"
                                     href="<?= site_url(['kelas', 'hapus', $k->id_kelas]); ?>"
