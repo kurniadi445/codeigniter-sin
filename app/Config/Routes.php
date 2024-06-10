@@ -8,6 +8,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/admin/siswa', 'Admin\Siswa::indeks');
 $routes->get('/admin/siswa/tambah', 'Admin\Siswa::tambah');
 $routes->post('/admin/siswa/tambah', 'Admin\Siswa::prosesTambah');
+$routes->get('/admin/siswa/edit/(:num)', 'Admin\Siswa::edit/$1');
 $routes->get('/admin/siswa/hapus/(:num)', 'Admin\Siswa::hapus/$1');
 
 $routes->get('/admin/guru', 'Admin\Guru::indeks');
