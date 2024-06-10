@@ -48,6 +48,12 @@
                 </a>
                 <ul class="treeview-menu">
                     <li>
+                        <a href="<?= site_url('kelas/tambah'); ?>">
+                            <i class="fa fa-circle-o text-red"></i>
+                            <span>Input Kelas</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="<?= site_url('kelas'); ?>">
                             <i class="fa fa-circle-o text-red"></i>
                             <span>Master Kelas</span>
