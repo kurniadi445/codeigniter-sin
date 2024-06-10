@@ -11,6 +11,7 @@ $routes->post('/admin/siswa/tambah', 'Admin\Siswa::prosesTambah');
 
 $routes->get('/admin/guru', 'Admin\Guru::indeks');
 $routes->get('/admin/guru/tambah', 'Admin\Guru::tambah');
+$routes->post('/admin/guru/tambah', 'Admin\Guru::prosesTambah');
 
 $routes->get('/admin/kelas', 'Admin\Kelas::indeks');
 $routes->get('/admin/kelas/tambah', 'Admin\Kelas::tambah');
