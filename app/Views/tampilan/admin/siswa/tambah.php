@@ -17,6 +17,15 @@
         </div>
         <div class="box-body">
             <form method="post">
+                <?php if (session()->has('kesalahan')) { ?>
+                    <div class="alert alert-danger">
+                        <ul>
+                            <?php foreach (session('kesalahan') as $k) { ?>
+                                <li><?= $k; ?></li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                <?php } ?>
                 <div class="row">
                     <div class="form-group col-sm-6">
                         <label for="masukan-nisn">NISN</label>
