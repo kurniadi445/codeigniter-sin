@@ -84,6 +84,12 @@
                     </li>
                 </ul>
             </li>
+            <li>
+                <a href="<?= site_url('laporan'); ?>">
+                    <i class="fa fa-file-text"></i>
+                    <span>Laporan</span>
+                </a>
+            </li>
         </ul>
         <!-- menu sidebar -->
     </section>
