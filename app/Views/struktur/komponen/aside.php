@@ -38,6 +38,23 @@
                     </li>
                 </ul>
             </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-building"></i>
+                    <span>Kelas</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li>
+                        <a href="<?= site_url('kelas'); ?>">
+                            <i class="fa fa-circle-o text-red"></i>
+                            <span>Master Kelas</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
         </ul>
         <!-- menu sidebar -->
     </section>
