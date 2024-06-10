@@ -10,6 +10,7 @@ class SiswaModel extends Model
     protected $primaryKey = 'id_siswa';
 
     protected $allowedFields = [
+        'id_kelas',
         'nisn',
         'no_kk',
         'nama_siswa',

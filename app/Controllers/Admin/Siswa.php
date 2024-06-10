@@ -45,6 +45,7 @@ class Siswa extends BaseController
     {
         $nisn = $this->request->getPost('nisn');
         $namaSiswa = $this->request->getPost('nama-siswa');
+        $kelas = $this->request->getPost('kelas');
         $alamat = $this->request->getPost('alamat');
         $agama = $this->request->getPost('agama');
         $tanggalLahir = $this->request->getPost('tanggal-lahir');
@@ -55,6 +56,7 @@ class Siswa extends BaseController
         $siswa = new SiswaModel();
 
         $siswa->insert([
+            'id_kelas' => $kelas,
             'nisn' => $nisn,
             'no_kk' => $noKK,
             'nama_siswa' => $namaSiswa,
