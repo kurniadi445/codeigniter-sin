@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\KelasModel;
+use CodeIgniter\Exceptions\PageNotFoundException;
 use CodeIgniter\HTTP\RedirectResponse;
 use Config\Database;
 use ReflectionException;
@@ -40,6 +41,25 @@ class Kelas extends BaseController
         ]);
 
         return redirect('kelas');
+    }
+
+    public function edit(int $idKelas): string
+    {
+        $db = Database::connect();
+
+        $kelas = $db->table('kelas');
+        $kelas = $kelas->where('id_kelas', $idKelas);
+
+        if ($kelas->countAllResults()) {
+            $kelas = $kelas->get();
+            $kelas = $kelas->getRow();
+
+            return view('tampilan/kelas/edit', [
+                'kelas' => $kelas
+            ]);
+        }
+
+        throw PageNotFoundException::forPageNotFound();
     }
 
     public function hapus(int $idKelas): RedirectResponse
