@@ -35,13 +35,27 @@ class Kelas extends BaseController
      */
     public function prosesTambah(): RedirectResponse
     {
-        $kelas = new KelasModel();
+        $aturan = [
+            'kelas' => 'required|max_length[30]|is_unique[kelas.nama_kelas]'
+        ];
 
-        $kelas->insert([
-            'nama_kelas' => $this->request->getPost('kelas')
-        ]);
+        $data = $this->request->getPost(array_keys($aturan));
 
-        return redirect('admin/kelas');
+        if ($this->validateData($data, $aturan)) {
+            $kelas = new KelasModel();
+
+            $kelas->insert([
+                'nama_kelas' => $this->request->getPost('kelas')
+            ]);
+
+            return redirect('admin/kelas');
+        }
+
+        $kesalahan = $this->validator->getErrors();
+
+        session()->setFlashdata('kesalahan', $kesalahan);
+
+        return redirect()->back();
     }
 
     public function edit(int $idKelas): string

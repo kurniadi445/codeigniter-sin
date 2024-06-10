@@ -17,6 +17,15 @@
         </div>
         <div class="box-body">
             <form method="post">
+                <?php if (session()->has('kesalahan')) { ?>
+                    <div class="alert alert-danger">
+                        <ul>
+                            <?php foreach (session('kesalahan') as $k) { ?>
+                                <li><?= $k; ?></li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                <?php } ?>
                 <div class="form-group">
                     <label for="masukan-kelas">Kelas</label>
                     <input class="form-control" id="masukan-kelas" name="kelas" type="text">
