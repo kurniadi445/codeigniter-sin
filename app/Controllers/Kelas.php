@@ -2,7 +2,10 @@
 
 namespace App\Controllers;
 
+use App\Models\KelasModel;
+use CodeIgniter\HTTP\RedirectResponse;
 use Config\Database;
+use ReflectionException;
 
 class Kelas extends BaseController
 {
@@ -23,5 +26,19 @@ class Kelas extends BaseController
     public function tambah(): string
     {
         return view('tampilan/kelas/tambah');
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function prosesTambah(): RedirectResponse
+    {
+        $kelas = new KelasModel();
+
+        $kelas->insert([
+            'nama_kelas' => $this->request->getPost('kelas')
+        ]);
+
+        return redirect('kelas');
     }
 }
