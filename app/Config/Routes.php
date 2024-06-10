@@ -13,6 +13,7 @@ $routes->get('/admin/siswa/hapus/(:num)', 'Admin\Siswa::hapus/$1');
 $routes->get('/admin/guru', 'Admin\Guru::indeks');
 $routes->get('/admin/guru/tambah', 'Admin\Guru::tambah');
 $routes->post('/admin/guru/tambah', 'Admin\Guru::prosesTambah');
+$routes->get('/admin/guru/hapus/(:num)', 'Admin\Guru::hapus/$1');
 
 $routes->get('/admin/kelas', 'Admin\Kelas::indeks');
 $routes->get('/admin/kelas/tambah', 'Admin\Kelas::tambah');

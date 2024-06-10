@@ -63,4 +63,17 @@ class Guru extends BaseController
 
         return redirect('admin/guru');
     }
+
+    public function hapus(int $idGuru): RedirectResponse
+    {
+        $db = Database::connect();
+
+        $guru = $db->table('guru');
+
+        $guru->delete([
+            'id_guru' => $idGuru
+        ]);
+
+        return redirect('admin/guru');
+    }
 }
