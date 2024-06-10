@@ -19,4 +19,9 @@ class Kelas extends BaseController
             'kelas' => $kelas
         ]);
     }
+
+    public function tambah(): string
+    {
+        return view('tampilan/kelas/tambah');
+    }
 }
