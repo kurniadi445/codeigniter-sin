@@ -41,4 +41,17 @@ class Kelas extends BaseController
 
         return redirect('kelas');
     }
+
+    public function hapus(int $idKelas): RedirectResponse
+    {
+        $db = Database::connect();
+
+        $kelas = $db->table('kelas');
+
+        $kelas->delete([
+            'id_kelas' => $idKelas
+        ]);
+
+        return redirect('kelas');
+    }
 }
