@@ -25,6 +25,12 @@
                 </a>
                 <ul class="treeview-menu">
                     <li>
+                        <a href="<?= site_url('siswa/tambah'); ?>">
+                            <i class="fa fa-circle-o text-red"></i>
+                            <span>Pendaftaran Siswa</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="<?= site_url('siswa'); ?>">
                             <i class="fa fa-circle-o text-red"></i>
                             <span>Master Siswa</span>
