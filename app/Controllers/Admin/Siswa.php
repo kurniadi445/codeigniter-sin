@@ -81,6 +81,8 @@ class Siswa extends BaseController
                 'no_telepon' => $nomorTelepon
             ]);
 
+            session()->setFlashdata('berhasil', 'Siswa berhasil ditambah');
+
             return redirect('admin/siswa');
         }
 
