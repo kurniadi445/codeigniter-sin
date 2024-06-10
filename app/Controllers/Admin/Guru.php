@@ -72,6 +72,8 @@ class Guru extends BaseController
                 'no_telepon' => $nomorTelepon
             ]);
 
+            session()->setFlashdata('berhasil', 'Guru berhasil ditambah');
+
             return redirect('admin/guru');
         }
 
