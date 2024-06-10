@@ -48,6 +48,8 @@ class Kelas extends BaseController
                 'nama_kelas' => $this->request->getPost('kelas')
             ]);
 
+            session()->setFlashdata('berhasil', 'Kelas berhasil ditambah');
+
             return redirect('admin/kelas');
         }
 

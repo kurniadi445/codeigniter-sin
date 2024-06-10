@@ -15,6 +15,9 @@
 </section>
 <!-- header konten -->
 <section class="content">
+    <?php if (session()->has('berhasil')) { ?>
+        <div class="alert alert-success"><?= session('berhasil'); ?></div>
+    <?php } ?>
     <div class="box box-danger">
         <div class="box-header with-border">
             <h3 class="box-title">List Semua Kelas</h3>
