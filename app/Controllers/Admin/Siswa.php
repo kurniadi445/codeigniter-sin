@@ -69,4 +69,17 @@ class Siswa extends BaseController
 
         return redirect('admin/siswa');
     }
+
+    public function hapus(int $idSiswa): RedirectResponse
+    {
+        $db = Database::connect();
+
+        $siswa = $db->table('siswa');
+
+        $siswa->delete([
+            'id_siswa' => $idSiswa
+        ]);
+
+        return redirect('admin/siswa');
+    }
 }
