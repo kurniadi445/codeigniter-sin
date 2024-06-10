@@ -8,4 +8,9 @@ class Guru extends BaseController
     {
         return view('tampilan/guru/indeks');
     }
+
+    public function tambah(): string
+    {
+        return view('tampilan/guru/tambah');
+    }
 }
