@@ -32,6 +32,9 @@
                         <label for="pemilih-kelas">Kelas</label>
                         <select class="form-control" id="pemilih-kelas" name="kelas">
                             <option selected>Pilih kelas</option>
+                            <?php foreach ($kelas as $k) { ?>
+                                <option value="<?= $k->id_kelas; ?>"><?= $k->nama_kelas; ?></option>
+                            <?php } ?>
                         </select>
                     </div>
                     <div class="form-group col-sm-6">

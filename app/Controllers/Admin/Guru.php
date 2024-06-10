@@ -3,6 +3,7 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
+use Config\Database;
 
 class Guru extends BaseController
 {
@@ -13,6 +14,15 @@ class Guru extends BaseController
 
     public function tambah(): string
     {
-        return view('tampilan/admin/guru/tambah');
+        $db = Database::connect();
+
+        $kelas = $db->table('kelas');
+        $kelas = $kelas->orderBy('nama_kelas');
+        $kelas = $kelas->get();
+        $kelas = $kelas->getResult();
+
+        return view('tampilan/admin/guru/tambah', [
+            'kelas' => $kelas
+        ]);
     }
 }
