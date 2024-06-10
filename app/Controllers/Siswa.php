@@ -4,13 +4,23 @@ namespace App\Controllers;
 
 use App\Models\SiswaModel;
 use CodeIgniter\HTTP\RedirectResponse;
+use Config\Database;
 use ReflectionException;
 
 class Siswa extends BaseController
 {
     public function indeks(): string
     {
-        return view('tampilan/siswa/indeks');
+        $db = Database::connect();
+
+        $siswa = $db->table('siswa');
+        $siswa = $siswa->orderBy('id_siswa', 'desc');
+        $siswa = $siswa->get();
+        $siswa = $siswa->getResult();
+
+        return view('tampilan/siswa/indeks', [
+            'siswa' => $siswa
+        ]);
     }
 
     public function tambah(): string
