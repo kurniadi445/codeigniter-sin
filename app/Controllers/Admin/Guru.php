@@ -43,25 +43,43 @@ class Guru extends BaseController
      */
     public function prosesTambah(): RedirectResponse
     {
-        $nip = $this->request->getPost('nip');
-        $namaGuru = $this->request->getPost('nama-guru');
-        $kelas = $this->request->getPost('kelas');
-        $alamat = $this->request->getPost('alamat');
-        $nomorTelepon = $this->request->getPost('nomor-telepon');
-        $jenisKelamin = $this->request->getPost('jenis-kelamin');
+        $aturan = [
+            'nip' => 'required|exact_length[18]|is_unique[guru.nip]',
+            'nama-guru' => 'required|min_length[3]|max_length[60]',
+            'alamat' => 'required|max_length[100]',
+            'nomor-telepon' => 'required|min_length[10]|max_length[13]|is_unique[siswa.no_telepon]',
+            'jenis-kelamin' => 'required|in_list[Laki-laki,Perempuan]'
+        ];
 
-        $guru = new GuruModel();
+        $data = $this->request->getPost(array_keys($aturan));
 
-        $guru->insert([
-            'id_kelas' => $kelas,
-            'nip' => $nip,
-            'nama_guru' => $namaGuru,
-            'jenis_kelamin' => $jenisKelamin,
-            'alamat' => $alamat,
-            'no_telepon' => $nomorTelepon
-        ]);
+        if ($this->validateData($data, $aturan)) {
+            $nip = $this->request->getPost('nip');
+            $namaGuru = $this->request->getPost('nama-guru');
+            $kelas = $this->request->getPost('kelas');
+            $alamat = $this->request->getPost('alamat');
+            $nomorTelepon = $this->request->getPost('nomor-telepon');
+            $jenisKelamin = $this->request->getPost('jenis-kelamin');
 
-        return redirect('admin/guru');
+            $guru = new GuruModel();
+
+            $guru->insert([
+                'id_kelas' => $kelas,
+                'nip' => $nip,
+                'nama_guru' => $namaGuru,
+                'jenis_kelamin' => $jenisKelamin,
+                'alamat' => $alamat,
+                'no_telepon' => $nomorTelepon
+            ]);
+
+            return redirect('admin/guru');
+        }
+
+        $kesalahan = $this->validator->getErrors();
+
+        session()->setFlashdata('kesalahan', $kesalahan);
+
+        return redirect()->back();
     }
 
     public function hapus(int $idGuru): RedirectResponse
