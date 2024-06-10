@@ -5,17 +5,17 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/siswa', 'Siswa::indeks');
-$routes->get('/siswa/tambah', 'Siswa::tambah');
-$routes->post('/siswa/tambah', 'Siswa::prosesTambah');
+$routes->get('/admin/siswa', 'Admin\Siswa::indeks');
+$routes->get('/admin/siswa/tambah', 'Admin\Siswa::tambah');
+$routes->post('/admin/siswa/tambah', 'Admin\Siswa::prosesTambah');
 
-$routes->get('/guru', 'Guru::indeks');
-$routes->get('/guru/tambah', 'Guru::tambah');
+$routes->get('/admin/guru', 'Admin\Guru::indeks');
+$routes->get('/admin/guru/tambah', 'Admin\Guru::tambah');
 
-$routes->get('/kelas', 'Kelas::indeks');
-$routes->get('/kelas/tambah', 'Kelas::tambah');
-$routes->post('/kelas/tambah', 'Kelas::prosesTambah');
-$routes->get('/kelas/edit/(:num)', 'Kelas::edit/$1');
-$routes->get('/kelas/hapus/(:num)', 'Kelas::hapus/$1');
+$routes->get('/admin/kelas', 'Admin\Kelas::indeks');
+$routes->get('/admin/kelas/tambah', 'Admin\Kelas::tambah');
+$routes->post('/admin/kelas/tambah', 'Admin\Kelas::prosesTambah');
+$routes->get('/admin/kelas/edit/(:num)', 'Admin\Kelas::edit/$1');
+$routes->get('/admin/kelas/hapus/(:num)', 'Admin\Kelas::hapus/$1');
 
-$routes->get('/laporan', 'Laporan::indeks');
+$routes->get('/admin/laporan', 'Admin\Laporan::indeks');

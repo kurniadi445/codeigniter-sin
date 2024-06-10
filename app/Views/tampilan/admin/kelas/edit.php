@@ -1,10 +1,12 @@
-<?= $this->extend('struktur/dasar'); ?>
+<?= $this->extend('struktur/admin/dasar'); ?>
 <?= $this->section('konten'); ?>
 <!-- header konten -->
 <section class="content-header">
     <h1>Edit Kelas</h1>
     <ol class="breadcrumb">
-        <li><a href="<?= site_url('kelas/edit'); ?>"><i class="fa fa-dashboard"></i> Edit Kelas</a></li>
+        <li>
+            <a href="<?= site_url('admin/kelas/edit'); ?>"><i class="fa fa-dashboard"></i> Edit Kelas</a>
+        </li>
     </ol>
 </section>
 <!-- header konten -->

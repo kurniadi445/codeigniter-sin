@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Admin;
 
+use App\Controllers\BaseController;
 use App\Models\KelasModel;
 use CodeIgniter\Exceptions\PageNotFoundException;
 use CodeIgniter\HTTP\RedirectResponse;
@@ -19,14 +20,14 @@ class Kelas extends BaseController
         $kelas = $kelas->get();
         $kelas = $kelas->getResult();
 
-        return view('tampilan/kelas/indeks', [
+        return view('tampilan/admin/kelas/indeks', [
             'kelas' => $kelas
         ]);
     }
 
     public function tambah(): string
     {
-        return view('tampilan/kelas/tambah');
+        return view('tampilan/admin/kelas/tambah');
     }
 
     /**
@@ -40,7 +41,7 @@ class Kelas extends BaseController
             'nama_kelas' => $this->request->getPost('kelas')
         ]);
 
-        return redirect('kelas');
+        return redirect('admin/kelas');
     }
 
     public function edit(int $idKelas): string
@@ -54,7 +55,7 @@ class Kelas extends BaseController
             $kelas = $kelas->get();
             $kelas = $kelas->getRow();
 
-            return view('tampilan/kelas/edit', [
+            return view('tampilan/admin/kelas/edit', [
                 'kelas' => $kelas
             ]);
         }
@@ -72,6 +73,6 @@ class Kelas extends BaseController
             'id_kelas' => $idKelas
         ]);
 
-        return redirect('kelas');
+        return redirect('admin/kelas');
     }
 }

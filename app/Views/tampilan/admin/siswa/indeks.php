@@ -1,4 +1,4 @@
-<?= $this->extend('struktur/dasar'); ?>
+<?= $this->extend('struktur/admin/dasar'); ?>
 <?= $this->section('css'); ?>
 <link
     href="<?= base_url('assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css'); ?>"
@@ -10,7 +10,7 @@
 <section class="content-header">
     <h1>Master Siswa</h1>
     <ol class="breadcrumb">
-        <li><a href="<?= site_url('siswa'); ?>"><i class="fa fa-dashboard"></i> Master Siswa</a></li>
+        <li><a href="<?= site_url('admin/siswa'); ?>"><i class="fa fa-dashboard"></i> Master Siswa</a></li>
     </ol>
 </section>
 <!-- header konten -->

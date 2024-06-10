@@ -25,13 +25,13 @@
                 </a>
                 <ul class="treeview-menu">
                     <li>
-                        <a href="<?= site_url('siswa/tambah'); ?>">
+                        <a href="<?= site_url('admin/siswa/tambah'); ?>">
                             <i class="fa fa-circle-o text-red"></i>
                             <span>Pendaftaran Siswa</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?= site_url('siswa'); ?>">
+                        <a href="<?= site_url('admin/siswa'); ?>">
                             <i class="fa fa-circle-o text-red"></i>
                             <span>Master Siswa</span>
                         </a>
@@ -48,13 +48,13 @@
                 </a>
                 <ul class="treeview-menu">
                     <li>
-                        <a href="<?= site_url('guru/tambah'); ?>">
+                        <a href="<?= site_url('admin/guru/tambah'); ?>">
                             <i class="fa fa-circle-o text-red"></i>
                             <span>Tambah Guru</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?= site_url('guru'); ?>">
+                        <a href="<?= site_url('admin/guru'); ?>">
                             <i class="fa fa-circle-o text-red"></i>
                             <span>Master Guru</span>
                         </a>
@@ -71,13 +71,13 @@
                 </a>
                 <ul class="treeview-menu">
                     <li>
-                        <a href="<?= site_url('kelas/tambah'); ?>">
+                        <a href="<?= site_url('admin/kelas/tambah'); ?>">
                             <i class="fa fa-circle-o text-red"></i>
                             <span>Input Kelas</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?= site_url('kelas'); ?>">
+                        <a href="<?= site_url('admin/kelas'); ?>">
                             <i class="fa fa-circle-o text-red"></i>
                             <span>Master Kelas</span>
                         </a>
@@ -85,7 +85,7 @@
                 </ul>
             </li>
             <li>
-                <a href="<?= site_url('laporan'); ?>">
+                <a href="<?= site_url('admin/laporan'); ?>">
                     <i class="fa fa-file-text"></i>
                     <span>Laporan</span>
                 </a>

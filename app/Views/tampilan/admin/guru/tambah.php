@@ -1,10 +1,12 @@
-<?= $this->extend('struktur/dasar'); ?>
+<?= $this->extend('struktur/admin/dasar'); ?>
 <?= $this->section('konten'); ?>
 <!-- header konten -->
 <section class="content-header">
     <h1>Tambah Guru</h1>
     <ol class="breadcrumb">
-        <li><a href="<?= site_url('guru/tambah'); ?>"><i class="fa fa-dashboard"></i> Tambah Guru</a></li>
+        <li>
+            <a href="<?= site_url('admin/guru/tambah'); ?>"><i class="fa fa-dashboard"></i> Tambah Guru</a>
+        </li>
     </ol>
 </section>
 <!-- header konten -->

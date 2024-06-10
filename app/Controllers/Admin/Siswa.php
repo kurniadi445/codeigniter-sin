@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Admin;
 
+use App\Controllers\BaseController;
 use App\Models\SiswaModel;
 use CodeIgniter\HTTP\RedirectResponse;
 use Config\Database;
@@ -18,14 +19,14 @@ class Siswa extends BaseController
         $siswa = $siswa->get();
         $siswa = $siswa->getResult();
 
-        return view('tampilan/siswa/indeks', [
+        return view('tampilan/admin/siswa/indeks', [
             'siswa' => $siswa
         ]);
     }
 
     public function tambah(): string
     {
-        return view('tampilan/siswa/tambah');
+        return view('tampilan/admin/siswa/tambah');
     }
 
     /**
@@ -55,6 +56,6 @@ class Siswa extends BaseController
             'no_telepon' => $nomorTelepon
         ]);
 
-        return redirect('siswa');
+        return redirect('admin/siswa');
     }
 }

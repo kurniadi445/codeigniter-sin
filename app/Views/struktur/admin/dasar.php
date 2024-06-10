@@ -38,10 +38,10 @@
 <body class="hold-transition sidebar-collapse sidebar-mini skin-purple-light">
 <div class="wrapper">
     <!-- header -->
-    <?= $this->include('struktur/komponen/header'); ?>
+    <?= $this->include('struktur/admin/komponen/header'); ?>
     <!-- header -->
     <!-- aside -->
-    <?= $this->include('struktur/komponen/aside'); ?>
+    <?= $this->include('struktur/admin/komponen/aside'); ?>
     <!-- aside -->
     <!-- pembungkus konten -->
     <div class="content-wrapper">
