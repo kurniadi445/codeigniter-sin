@@ -48,6 +48,12 @@
                 </a>
                 <ul class="treeview-menu">
                     <li>
+                        <a href="<?= site_url('guru/tambah'); ?>">
+                            <i class="fa fa-circle-o text-red"></i>
+                            <span>Tambah Guru</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="<?= site_url('guru'); ?>">
                             <i class="fa fa-circle-o text-red"></i>
                             <span>Master Guru</span>
