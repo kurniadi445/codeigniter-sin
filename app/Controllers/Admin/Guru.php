@@ -12,7 +12,16 @@ class Guru extends BaseController
 {
     public function indeks(): string
     {
-        return view('tampilan/admin/guru/indeks');
+        $db = Database::connect();
+
+        $guru = $db->table('guru');
+        $guru = $guru->orderBy('id_guru', 'desc');
+        $guru = $guru->get();
+        $guru = $guru->getResult();
+
+        return view('tampilan/admin/guru/indeks', [
+            'guru' => $guru
+        ]);
     }
 
     public function tambah(): string

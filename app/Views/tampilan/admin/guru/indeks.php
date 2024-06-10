@@ -34,6 +34,26 @@
                     <th>Aksi</th>
                 </tr>
                 </thead>
+                <?php if ($guru) { ?>
+                    <tbody>
+                    <?php foreach ($guru as $g) { ?>
+                        <tr>
+                            <td><?= $g->nip; ?></td>
+                            <td><?= $g->nama_guru; ?></td>
+                            <td><?= $g->alamat; ?></td>
+                            <td></td>
+                            <td><?= $g->jenis_kelamin; ?></td>
+                            <td><?= $g->no_telepon; ?></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <a class="btn btn-warning" href="#"><i class="fa fa-pencil"></i></a>
+                                <a class="btn btn-danger" href="#"><i class="fa fa-times"></i></a>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                    </tbody>
+                <?php } ?>
             </table>
         </div>
     </div>
