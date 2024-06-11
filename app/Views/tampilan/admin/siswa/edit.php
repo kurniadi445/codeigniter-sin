@@ -1,4 +1,11 @@
 <?= $this->extend('struktur/admin/dasar'); ?>
+<?= $this->section('css'); ?>
+<link href="<?= base_url('assets/bower_components/select2/dist/css/select2.min.css'); ?>" rel="stylesheet">
+<link
+    href="<?= base_url('assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css'); ?>"
+    rel="stylesheet"
+>
+<?= $this->endSection(); ?>
 <?= $this->section('konten'); ?>
 <!-- header konten -->
 <section class="content-header">
@@ -148,8 +155,24 @@
                 </div>
                 <div class="row">
                     <div class="form-group col-sm-6">
-                        <label for="masukan-tempat-lahir">Tempat Lahir</label>
-                        <input class="form-control" id="masukan-tempat-lahir" name="tempat-lahir" type="text">
+                        <label for="pemilih-tempat-lahir">Tempat Lahir</label>
+                        <select
+                            class="form-control select2"
+                            id="pemilih-tempat-lahir"
+                            name="tempat-lahir"
+                            style="width: 100%"
+                        >
+                            <?php foreach ($tempat_lahir as $t) { ?>
+                                <?php if ($siswa->id_tempat_lahir === $t->id_tempat_lahir) { ?>
+                                    <option
+                                        selected
+                                        value="<?= $t->id_tempat_lahir; ?>"
+                                    ><?= $t->nama_tempat_lahir; ?></option>
+                                <?php } else { ?>
+                                    <option value="<?= $t->id_tempat_lahir; ?>"><?= $t->nama_tempat_lahir; ?></option>
+                                <?php } ?>
+                            <?php } ?>
+                        </select>
                     </div>
                     <div class="form-group col-sm-6">
                         <label for="masukan-no-kk">No. KK</label>
@@ -203,3 +226,21 @@
     </div>
 </section>
 <?= $this->endSection(); ?>
+<?= $this->section('js'); ?>
+<script src="<?= base_url('assets/bower_components/select2/dist/js/select2.full.min.js'); ?>"></script>
+<script src="<?= base_url('assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'); ?>"></script>
+<script>
+    'use strict';
+
+    $(function () {
+        $('#pemilih-tempat-lahir').select2({
+            placeholder: 'Pilih tempat lahir',
+            tags: true
+        });
+
+        $('#masukan-tanggal-lahir').datepicker({
+            autoclose: true
+        })
+    });
+</script>
+<?= $this->endSection('js'); ?>

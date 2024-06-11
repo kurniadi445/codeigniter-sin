@@ -147,9 +147,15 @@ class Siswa extends BaseController
             $kelas = $kelas->get();
             $kelas = $kelas->getResult();
 
+            $tempatLahir = $db->table('tempat_lahir');
+            $tempatLahir = $tempatLahir->orderBy('nama_tempat_lahir');
+            $tempatLahir = $tempatLahir->get();
+            $tempatLahir = $tempatLahir->getResult();
+
             return view('tampilan/admin/siswa/edit', [
                 'siswa' => $siswa,
-                'kelas' => $kelas
+                'kelas' => $kelas,
+                'tempat_lahir' => $tempatLahir
             ]);
         }
 
