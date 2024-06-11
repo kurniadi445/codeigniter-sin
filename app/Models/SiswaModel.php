@@ -19,6 +19,8 @@ class SiswaModel extends Model
         'jenis_kelamin',
         'alamat',
         'agama',
-        'no_telepon'
+        'no_telepon',
+        'nama_ayah',
+        'nama_ibu'
     ];
 }

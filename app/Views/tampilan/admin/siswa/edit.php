@@ -165,11 +165,23 @@
                 <div class="row">
                     <div class="form-group col-sm-6">
                         <label for="masukan-nama-ayah">Nama Ayah</label>
-                        <input class="form-control" id="masukan-nama-ayah" name="nama-ayah" type="text">
+                        <input
+                            class="form-control"
+                            id="masukan-nama-ayah"
+                            name="nama-ayah"
+                            type="text"
+                            value="<?= $siswa->nama_ayah; ?>"
+                        >
                     </div>
                     <div class="form-group col-sm-6">
                         <label for="masukan-nama-ibu">Nama Ibu</label>
-                        <input class="form-control" id="masukan-nama-ibu" name="nama-ibu" type="text">
+                        <input
+                            class="form-control"
+                            id="masukan-nama-ibu"
+                            name="nama-ibu"
+                            type="text"
+                            value="<?= $siswa->nama_ibu; ?>"
+                        >
                     </div>
                 </div>
                 <div class="row">

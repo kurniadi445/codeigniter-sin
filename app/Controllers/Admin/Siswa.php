@@ -59,7 +59,9 @@ class Siswa extends BaseController
             'tanggal-lahir' => 'required|valid_date[Y-m-d]',
             'jenis-kelamin' => 'required|in_list[Laki-laki,Perempuan]',
             'nomor-telepon' => 'required|min_length[10]|max_length[13]|is_unique[siswa.no_telepon]',
-            'no-kk' => 'required|exact_length[16]|is_unique[siswa.no_kk]'
+            'no-kk' => 'required|exact_length[16]|is_unique[siswa.no_kk]',
+            'nama-ayah' => 'required|min_length[3]|max_length[60]',
+            'nama-ibu' => 'required|min_length[3]|max_length[60]'
         ];
 
         $data = $this->request->getPost(array_keys($aturan));
@@ -75,6 +77,8 @@ class Siswa extends BaseController
             $nomorTelepon = $this->request->getPost('nomor-telepon');
             $tempatLahir = $this->request->getPost('tempat-lahir');
             $noKK = $this->request->getPost('no-kk');
+            $namaAyah = $this->request->getPost('nama-ayah');
+            $namaIbu = $this->request->getPost('nama-ibu');
 
             $db = Database::connect();
 
@@ -108,7 +112,9 @@ class Siswa extends BaseController
                 'jenis_kelamin' => $jenisKelamin,
                 'alamat' => $alamat,
                 'agama' => $agama,
-                'no_telepon' => $nomorTelepon
+                'no_telepon' => $nomorTelepon,
+                'nama_ayah' => $namaAyah,
+                'nama_ibu' => $namaIbu
             ]);
 
             $db->transCommit();
@@ -165,7 +171,9 @@ class Siswa extends BaseController
                 'tanggal-lahir' => 'required|valid_date[Y-m-d]',
                 'jenis-kelamin' => 'required|in_list[Laki-laki,Perempuan]',
                 'nomor-telepon' => "required|min_length[10]|max_length[13]|is_unique[siswa.no_telepon,id_siswa,{$idSiswa}]",
-                'no-kk' => "required|exact_length[16]|is_unique[siswa.no_kk,id_siswa,{$idSiswa}]"
+                'no-kk' => "required|exact_length[16]|is_unique[siswa.no_kk,id_siswa,{$idSiswa}]",
+                'nama-ayah' => 'required|min_length[3]|max_length[60]',
+                'nama-ibu' => 'required|min_length[3]|max_length[60]'
             ];
 
             $data = $this->request->getPost(array_keys($aturan));
@@ -180,6 +188,8 @@ class Siswa extends BaseController
                 $nomorTelepon = $this->request->getPost('nomor-telepon');
                 $tempatLahir = $this->request->getPost('tempat-lahir');
                 $noKK = $this->request->getPost('no-kk');
+                $namaAyah = $this->request->getPost('nama-ayah');
+                $namaIbu = $this->request->getPost('nama-ibu');
 
                 $db->transBegin();
 
@@ -208,7 +218,9 @@ class Siswa extends BaseController
                     'jenis_kelamin' => $jenisKelamin,
                     'alamat' => $alamat,
                     'agama' => $agama,
-                    'no_telepon' => $nomorTelepon
+                    'no_telepon' => $nomorTelepon,
+                    'nama_ayah' => $namaAyah,
+                    'nama_ibu' => $namaIbu
                 ]);
 
                 $db->transCommit();
