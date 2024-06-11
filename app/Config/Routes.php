@@ -29,3 +29,5 @@ $routes->get('/admin/kelas/hapus/(:num)', 'Admin\Kelas::hapus/$1');
 $routes->get('/admin/laporan', 'Admin\Laporan::indeks');
 
 $routes->get('/guru/siswa', 'Guru\Siswa::indeks');
+
+$routes->get('/siswa', 'Siswa\Dasbor::indeks');
