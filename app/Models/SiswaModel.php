@@ -21,6 +21,7 @@ class SiswaModel extends Model
         'agama',
         'no_telepon',
         'nama_ayah',
-        'nama_ibu'
+        'nama_ibu',
+        'tahun_ajaran'
     ];
 }

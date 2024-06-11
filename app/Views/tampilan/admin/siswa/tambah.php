@@ -145,7 +145,7 @@
                 <div class="row">
                     <div class="form-group col-sm-6">
                         <label for="masukan-tahun-ajaran">Tahun Ajaran</label>
-                        <input class="form-control" id="masukan-tahun-ajaran" name="tahun-ajaran" type="text">
+                        <input class="form-control" id="masukan-tahun-ajaran" name="tahun-ajaran" type="number">
                     </div>
                     <div class="form-group col-sm-6"></div>
                 </div>
