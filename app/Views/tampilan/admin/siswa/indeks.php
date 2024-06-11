@@ -72,7 +72,7 @@
                             <td><?= $s->no_kk; ?></td>
                             <td><?= $s->nama_ayah; ?></td>
                             <td><?= $s->nama_ibu; ?></td>
-                            <td></td>
+                            <td><?= $s->tahun_ajaran; ?></td>
                             <td>
                                 <a
                                     class="btn btn-warning"
