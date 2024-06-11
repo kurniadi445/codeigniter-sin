@@ -44,6 +44,19 @@
                             <th>Aksi</th>
                         </tr>
                         </thead>
+                        <?php if ($siswa) { ?>
+                            <tbody>
+                            <?php foreach ($siswa as $s) { ?>
+                                <tr>
+                                    <td><?= $s->nisn; ?></td>
+                                    <td><?= $s->nama_siswa; ?></td>
+                                    <td><?= $s->nama_kelas; ?></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            <?php } ?>
+                            </tbody>
+                        <?php } ?>
                     </table>
                 </div>
             </div>
