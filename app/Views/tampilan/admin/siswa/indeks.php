@@ -29,6 +29,9 @@
                         <label style="width: 100%">
                             <select class="form-control input-sm" name="kelas">
                                 <option selected>Pilih kelas</option>
+                                <?php foreach ($kelas as $k) { ?>
+                                    <option value="<?= $k->id_kelas ?>"><?= $k->nama_kelas; ?></option>
+                                <?php } ?>
                             </select>
                         </label>
                     </div>

@@ -15,6 +15,11 @@ class Siswa extends BaseController
     {
         $db = Database::connect();
 
+        $kelas = $db->table('kelas');
+        $kelas = $kelas->orderBy('nama_kelas');
+        $kelas = $kelas->get();
+        $kelas = $kelas->getResult();
+
         $siswa = $db->table('siswa');
         $siswa = $siswa->join('tempat_lahir', 'siswa.id_tempat_lahir = tempat_lahir.id_tempat_lahir');
         $siswa = $siswa->orderBy('id_siswa', 'desc');
@@ -22,6 +27,7 @@ class Siswa extends BaseController
         $siswa = $siswa->getResult();
 
         return view('tampilan/admin/siswa/indeks', [
+            'kelas' => $kelas,
             'siswa' => $siswa
         ]);
     }
