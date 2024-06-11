@@ -14,10 +14,6 @@ class TambahNilai extends Migration
                 'type' => 'INT',
                 'unsigned' => true
             ],
-            'id_tahun_ajaran' => [
-                'type' => 'TINYINT',
-                'unsigned' => true
-            ],
             'id_guru' => [
                 'type' => 'SMALLINT',
                 'unsigned' => true
@@ -43,7 +39,6 @@ class TambahNilai extends Migration
 
         $this->forge->addPrimaryKey('id_nilai');
 
-        $this->forge->addForeignKey('id_tahun_ajaran','tahun_ajaran','id_tahun_ajaran');
         $this->forge->addForeignKey('id_guru','guru','id_guru', '', 'CASCADE');
         $this->forge->addForeignKey('id_siswa','siswa','id_siswa', '', 'CASCADE');
 
