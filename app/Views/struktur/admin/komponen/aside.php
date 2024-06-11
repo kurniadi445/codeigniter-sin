@@ -61,6 +61,12 @@
                     </li>
                 </ul>
             </li>
+            <li>
+                <a href="<?= site_url('admin/mata-pelajaran'); ?>">
+                    <i class="fa fa-book"></i>
+                    <span>Mata Pelajaran</span>
+                </a>
+            </li>
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-building"></i>
