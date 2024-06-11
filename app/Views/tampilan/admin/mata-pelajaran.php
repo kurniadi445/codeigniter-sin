@@ -13,6 +13,17 @@
 </section>
 <!-- header konten -->
 <section class="content">
+    <?php if (session()->has('berhasil')) { ?>
+        <div class="alert alert-success"><?= session('berhasil'); ?></div>
+    <?php } elseif (session()->has('kesalahan')) { ?>
+        <div class="alert alert-danger">
+            <ul>
+                <?php foreach (session('kesalahan') as $k) { ?>
+                    <li><?= $k; ?></li>
+                <?php } ?>
+            </ul>
+        </div>
+    <?php } ?>
     <div class="box box-default">
         <div class="box-header with-border">
             <h3 class="box-title">Input Mata Pelajaran</h3>

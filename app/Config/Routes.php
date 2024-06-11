@@ -18,6 +18,7 @@ $routes->post('/admin/guru/tambah', 'Admin\Guru::prosesTambah');
 $routes->get('/admin/guru/hapus/(:num)', 'Admin\Guru::hapus/$1');
 
 $routes->get('/admin/mata-pelajaran', 'Admin\MataPelajaran::indeks');
+$routes->post('/admin/mata-pelajaran', 'Admin\MataPelajaran::proses');
 
 $routes->get('/admin/kelas', 'Admin\Kelas::indeks');
 $routes->get('/admin/kelas/tambah', 'Admin\Kelas::tambah');
