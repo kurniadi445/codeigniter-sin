@@ -1,6 +1,10 @@
 <?= $this->extend('struktur/admin/dasar'); ?>
 <?= $this->section('css'); ?>
 <link href="<?= base_url('assets/bower_components/select2/dist/css/select2.min.css'); ?>" rel="stylesheet">
+<link
+    href="<?= base_url('assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css'); ?>"
+    rel="stylesheet"
+>
 <?= $this->endSection(); ?>
 <?= $this->section('konten'); ?>
 <!-- header konten -->
@@ -159,6 +163,7 @@
 <?= $this->endSection(); ?>
 <?= $this->section('js'); ?>
 <script src="<?= base_url('assets/bower_components/select2/dist/js/select2.full.min.js'); ?>"></script>
+<script src="<?= base_url('assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'); ?>"></script>
 <script>
     'use strict';
 
@@ -167,6 +172,10 @@
             placeholder: 'Pilih tempat lahir',
             tags: true
         });
+
+        $('#masukan-tanggal-lahir').datepicker({
+            autoclose: true
+        })
     });
 </script>
 <?= $this->endSection('js'); ?>
