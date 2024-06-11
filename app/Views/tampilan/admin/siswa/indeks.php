@@ -65,7 +65,7 @@
                             <td><?= $s->alamat; ?></td>
                             <td><?= $s->jenis_kelamin; ?></td>
                             <td><?= $s->no_telepon; ?></td>
-                            <td></td>
+                            <td><?= $s->nama_tempat_lahir; ?></td>
                             <td><?= $s->no_kk; ?></td>
                             <td></td>
                             <td></td>
