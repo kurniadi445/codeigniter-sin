@@ -26,6 +26,7 @@
                         </ul>
                     </div>
                 <?php } ?>
+                <input name="_method" type="hidden" value="PUT">
                 <div class="row">
                     <div class="form-group col-sm-6">
                         <label for="masukan-nisn">NISN</label>
