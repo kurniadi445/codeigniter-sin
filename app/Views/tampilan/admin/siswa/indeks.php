@@ -71,7 +71,10 @@
                             <td></td>
                             <td></td>
                             <td>
-                                <a class="btn btn-warning" href="#"><i class="fa fa-pencil"></i></a>
+                                <a
+                                    class="btn btn-warning"
+                                    href="<?= site_url(['admin', 'siswa', 'edit', $s->id_siswa]); ?>"
+                                ><i class="fa fa-pencil"></i></a>
                                 <a
                                     class="btn btn-danger"
                                     href="<?= site_url(['admin', 'siswa', 'hapus', $s->id_siswa]); ?>"
