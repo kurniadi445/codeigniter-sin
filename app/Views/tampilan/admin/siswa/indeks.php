@@ -67,8 +67,8 @@
                             <td><?= $s->no_telepon; ?></td>
                             <td><?= $s->nama_tempat_lahir; ?></td>
                             <td><?= $s->no_kk; ?></td>
-                            <td></td>
-                            <td></td>
+                            <td><?= $s->nama_ayah; ?></td>
+                            <td><?= $s->nama_ibu; ?></td>
                             <td></td>
                             <td>
                                 <a
