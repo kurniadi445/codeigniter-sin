@@ -4,6 +4,7 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\SiswaModel;
+use CodeIgniter\Exceptions\PageNotFoundException;
 use CodeIgniter\HTTP\RedirectResponse;
 use Config\Database;
 use ReflectionException;
@@ -91,6 +92,31 @@ class Siswa extends BaseController
         session()->setFlashdata('kesalahan', $kesalahan);
 
         return redirect()->back();
+    }
+
+    public function edit(int $idSiswa): string
+    {
+        $db = Database::connect();
+
+        $siswa = $db->table('siswa');
+        $siswa = $siswa->where('id_siswa', $idSiswa);
+
+        if ($siswa->countAllResults()) {
+            $siswa = $siswa->get();
+            $siswa = $siswa->getRow();
+
+            $kelas = $db->table('kelas');
+            $kelas = $kelas->orderBy('nama_kelas');
+            $kelas = $kelas->get();
+            $kelas = $kelas->getResult();
+
+            return view('tampilan/admin/siswa/edit', [
+                'siswa' => $siswa,
+                'kelas' => $kelas
+            ]);
+        }
+
+        throw PageNotFoundException::forPageNotFound();
     }
 
     public function hapus(int $idSiswa): RedirectResponse
