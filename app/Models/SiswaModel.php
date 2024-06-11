@@ -11,6 +11,7 @@ class SiswaModel extends Model
 
     protected $allowedFields = [
         'id_kelas',
+        'id_tempat_lahir',
         'nisn',
         'no_kk',
         'nama_siswa',

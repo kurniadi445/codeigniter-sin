@@ -17,9 +17,9 @@
         rel="stylesheet"
     >
     <link href="<?= base_url('assets/bower_components/Ionicons/css/ionicons.min.css'); ?>" rel="stylesheet">
+    <?= $this->renderSection('css'); ?>
     <link href="<?= base_url('assets/dist/css/AdminLTE.min.css'); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/dist/css/skins/_all-skins.min.css'); ?>" rel="stylesheet">
-    <?= $this->renderSection('css'); ?>
     <!-- css -->
     <!-- js -->
     <script src="<?= base_url('assets/bower_components/jquery/dist/jquery.min.js'); ?>"></script>
