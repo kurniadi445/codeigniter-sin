@@ -21,7 +21,13 @@ class Siswa extends BaseController
         $kelas = $kelas->getResult();
 
         $siswa = $db->table('siswa');
+        $siswa = $siswa->join('kelas', 'siswa.id_kelas = kelas.id_kelas', 'LEFT');
         $siswa = $siswa->join('tempat_lahir', 'siswa.id_tempat_lahir = tempat_lahir.id_tempat_lahir');
+
+        if ($this->request->getGet('kelas')) {
+            $siswa = $siswa->where('nama_kelas', $this->request->getGet('kelas'));
+        }
+
         $siswa = $siswa->orderBy('id_siswa', 'desc');
         $siswa = $siswa->get();
         $siswa = $siswa->getResult();

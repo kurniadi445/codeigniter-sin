@@ -27,7 +27,7 @@
                 <div class="row">
                     <div class="col-sm-2">
                         <label style="width: 100%">
-                            <select class="form-control input-sm" name="kelas">
+                            <select class="form-control input-sm" id="pemilih-kelas" name="kelas">
                                 <option selected>Pilih kelas</option>
                                 <?php foreach ($kelas as $k) { ?>
                                     <option value="<?= $k->id_kelas ?>"><?= $k->nama_kelas; ?></option>
@@ -99,6 +99,16 @@
     'use strict';
 
     $(function () {
+        $('#pemilih-kelas').on('change', function () {
+            const nilai = $(this).val();
+
+            const parameter = new URLSearchParams({
+                kelas: nilai
+            }).toString();
+
+            window.location.assign(`/admin/siswa?${parameter}`);
+        });
+
         $('#tabel-master-siswa').DataTable({
             columnDefs: [
                 {
